@@ -3,8 +3,8 @@
     if( $_GET['code'] ){
         $auth = 'yes' ;
         $code =  $_GET['code'];
-        $AppSecret = "35334f24654b12659279a252cd0969e2";
-        $AppId = "wx46ec49d8e7a04a16";
+        $AppSecret = "803e483ee8bdc87f07e14aedc0232b8f";
+        $AppId = "wx4d715e6a90332dab";
         $state = $_GET['state'] ;
         //$tmp = explode("0%231%23", $state) ;
         //$real_url = $tmp[1];
@@ -49,13 +49,13 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                      $nickname = $user_obj['nickname'];
                   }
           if( !isset($headImg) || $headImg =='' ){
-                $url =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx46ec49d8e7a04a16&redirect_uri=http%3A%2F%2Fmkt4.chule.cc%2FliftDesk%2Findex.php&response_type=code&scope=snsapi_userinfo&state=me#wechat_redirect" ;
+                $url =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4d715e6a90332dab&redirect_uri=http%3A%2F%2Fmkt4.chubaobeijing.cn%2FliftDeskM%2Findex.php&response_type=code&scope=snsapi_userinfo&state=me#wechat_redirect" ;
                 echo '<script>location.href="'.$url.'"</script>';
                 //echo '<script>alert("err1")</script>';
           }
     }
     else{
-        $url =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx46ec49d8e7a04a16&redirect_uri=http%3A%2F%2Fmkt4.chule.cc%2FliftDesk%2Findex.php&response_type=code&scope=snsapi_userinfo&state=me#wechat_redirect" ;
+        $url =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4d715e6a90332dab&redirect_uri=http%3A%2F%2Fmkt4.chubaobeijing.cn%2FliftDeskM%2Findex.php&response_type=code&scope=snsapi_userinfo&state=me#wechat_redirect" ;
         //echo '<script>alert("err2")</script>';
         echo '<script>location.href="'.$url.'"</script>';
     }
@@ -221,10 +221,13 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 					<img src="http://zhcn.web.cdn.cootekservice.com/s/liftDesk/images/biaoti.png" alt="">
 				</div>
 				<div class="redContainer">
-					<img src="http://zhcn.web.cdn.cootekservice.com/s/liftDesk/images/cai.gif" alt="">
+					<!--img src="http://zhcn.web.cdn.cootekservice.com/s/liftDesk/images/cai.gif" alt=""-->
 				</div>
 				<div class="buttonContainer" id="fetch">
 					<p>领取红包</p>
+				</div>
+				<div class="buttonContainer" id="beat">
+					<p>群殴老板</p>
 				</div>
 			</div>
 			<div class="codeContainer">
@@ -241,6 +244,12 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		<div class="bottomContainer">
 			<div class="bannerContainer">
 				<img src="http://zhcn.web.cdn.cootekservice.com/s/liftDesk/images/banner.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="maskContainer" id="mask">
+			<div class="guideContainer">
+				<img src="http://zhcn.web.cdn.cootekservice.com/s/liftDesk/images/chui.png" alt="">
 			</div>
 		</div>
 		
@@ -511,6 +520,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		document.getElementById('returnGame').onclick = function(){
 			$('#p5').css('display', 'none');
 			$('#p4').css('display', 'block');
+			$('#p5 .contentContainer').removeClass('moveOut');
+			$('#p5 .codeContainer').removeClass('moveUp');
 			_hmt.push(['_trackEvent', "liftDesk", "liftDeskReturnGame"]);
 		}
 
@@ -554,6 +565,16 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$('#board2').css('display', 'none');
 			$('#p1').fadeOut(200);
 			_hmt.push(['_trackEvent', "liftDesk", "liftDeskSkip"]);
+		}
+
+		document.getElementById('beat').onclick = function(){
+			$('#mask').css('display', 'block');
+			_hmt.push(['_trackEvent', "liftDesk", "liftDeskClickBeat"]);
+		}
+
+		document.getElementById('mask').onclick = function(){
+			$('#mask').css('display', 'none');
+			_hmt.push(['_trackEvent', "liftDesk", "liftDeskRemoveMask"]);
 		}
 
 

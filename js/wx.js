@@ -7,7 +7,7 @@
 	var desc = '';
 	
     
-	var link = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx46ec49d8e7a04a16&redirect_uri=http%3A%2F%2Fmkt4.chule.cc%2FliftDesk%2Findex.php&response_type=code&scope=snsapi_base&state=me#wechat_redirect';
+	var link = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4d715e6a90332dab&redirect_uri=http%3A%2F%2Fmkt4.chubaobeijing.cn%2FliftDeskM%2Findex.php&response_type=code&scope=snsapi_base&state=me#wechat_redirect';
 	console.log(link);
 	//if(ua.weixin){	
     $.getJSON('//wx.chubao.cn/getwxconf?url='+myUrl+'&callback=?', function(remoteData){

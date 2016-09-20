@@ -47,6 +47,22 @@ img {
 @-webkit-keyframes moveOut {
   100% {
     -webkit-transform: translate3d(0, -4.26667rem, -4.26667rem) rotateX(90deg); } }
+@keyframes run {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: -34.13333rem 0; } }
+@-webkit-keyframes run {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: -34.13333rem 0; } }
+@keyframes moveLine {
+  50% {
+    transform: translate3d(2.13333rem, -2.13333rem, 0); } }
+@-webkit-keyframes moveLine {
+  50% {
+    -webkit-transform: translate3d(2.13333rem, -2.13333rem, 0); } }
 .pageContainer {
   position: absolute;
   width: 100%;
@@ -319,17 +335,23 @@ img {
     left: 3%; }
     #p5 .objectContainer .contentContainer .titleContainer, #p5 .objectContainer .codeContainer .titleContainer {
       position: relative;
-      width: 100%; }
+      width: 85%;
+      margin: auto; }
     #p5 .objectContainer .contentContainer .redContainer, #p5 .objectContainer .codeContainer .redContainer {
       position: relative;
-      width: 75%;
+      width: 8.53333rem;
+      height: 8.23467rem;
       margin: auto;
-      margin-top: 0.85333rem; }
+      margin-top: 0.85333rem;
+      background: url(http://zhcn.web.cdn.cootekservice.com/s/liftDesk/images/gif.png) 0 0 no-repeat;
+      background-size: auto 100%;
+      animation: run 0.6s steps(4) infinite;
+      -webkit-animation: run 0.6s steps(4) infinite; }
     #p5 .objectContainer .contentContainer .buttonContainer, #p5 .objectContainer .codeContainer .buttonContainer {
       position: relative;
       width: 6.336rem;
       margin: auto;
-      margin-top: 0.85333rem;
+      margin-top: 0.42667rem;
       background-image: url(http://zhcn.web.cdn.cootekservice.com/s/liftDesk/images/btn3.png);
       background-size: 100% auto;
       background-repeat: no-repeat; }
@@ -357,13 +379,28 @@ img {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 4.56533rem;
+    height: 3.56267rem;
     background-size: 100% auto;
     background-repeat: no-repeat; }
     #p5 .bottomContainer .bannerContainer {
       position: absolute;
       bottom: 0rem;
       width: 100%; }
+  #p5 .maskContainer {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.75); }
+    #p5 .maskContainer .guideContainer {
+      position: absolute;
+      top: 3.2rem;
+      right: 3.2rem;
+      width: 3.2rem;
+      animation: moveLine 1s infinite;
+      -webkit-animation: moveLine 1s infinite; }
 
 #rankpanel {
   z-index: 5;
